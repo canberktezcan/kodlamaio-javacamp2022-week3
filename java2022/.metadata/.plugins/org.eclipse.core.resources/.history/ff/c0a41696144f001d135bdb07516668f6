@@ -1,0 +1,7 @@
+package oopWithNLayeredApp.dataAccess;
+
+public interface CategoryDao {
+
+	void add();
+	
+}

@@ -1,0 +1,42 @@
+package oopWithNLayeredApp.business;
+
+import java.util.List;
+import java.util.Locale.Category;
+
+import oopWithNLayeredApp.dataAccess.CategoryDao;
+import oopWithNLayeredApp.entities.Course;
+
+public class CategoryManager {
+	private CategoryDao categoryDao;
+	List<Category> categories;
+	
+	public CategoryManager(CategoryDao categoryDao, List<Category> categories) {
+		super();
+		this.categoryDao = categoryDao;
+		this.categories = categories;
+	}
+
+	public void add(Category category) throws Exception {
+		
+		 
+			if(categories.isEmpty()) {
+				categories.add(category);
+				categoryDao.add(category);
+			}else {
+				for (Category existingcategory : categories) {
+					if(existingcategory.getName().equals(category.getName()) ) {
+						throw new Exception("Bu kategori zaten mevcut lütfen yeni bir kategori ekleyin !");
+					}
+				}
+				
+				courses.add(course);
+				courseDao.add(course);
+			}
+			
+			
+			
+		
+		
+	}
+	
+}

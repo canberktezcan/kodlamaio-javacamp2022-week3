@@ -1,0 +1,13 @@
+package oopWithNLayeredApp.dataAccess.JdbcDao;
+
+import oopWithNLayeredApp.dataAccess.CategoryDao;
+
+public class CategoryJdbcDao implements CategoryDao{
+
+	@Override
+	public void add() {
+
+		System.out.println("Category added by Jdbc");
+	}
+
+}

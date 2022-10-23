@@ -1,0 +1,16 @@
+package oopWithNLayeredApp.dataAccess.HibernateDao;
+
+import java.util.Locale.Category;
+
+import oopWithNLayeredApp.dataAccess.CategoryDao;
+
+public class CategoryHibernateDao implements CategoryDao{
+
+	@Override
+	public void add(Category category) {
+		
+		System.out.println("Category added by Hibernate");
+	}
+
+	
+}

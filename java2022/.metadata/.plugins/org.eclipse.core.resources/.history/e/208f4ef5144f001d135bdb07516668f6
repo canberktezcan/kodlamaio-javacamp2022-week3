@@ -1,0 +1,13 @@
+package oopWithNLayeredApp.dataAccess.JdbcDao;
+
+import oopWithNLayeredApp.dataAccess.CourseDao;
+
+public class CourseJdbcDao implements CourseDao {
+
+	@Override
+	public void add() {
+
+		System.out.println("Course added by Jdbc");
+	}
+
+}

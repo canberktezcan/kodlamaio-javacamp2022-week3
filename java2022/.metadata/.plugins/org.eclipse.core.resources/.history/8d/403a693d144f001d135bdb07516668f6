@@ -1,0 +1,14 @@
+package oopWithNLayeredApp.business;
+
+import oopWithNLayeredApp.dataAccess.JdbcDao.CourseJdbcDao;
+
+public class CourseManager {
+
+	CourseJdbcDao 
+	
+	public void add() {
+		
+		
+		
+	}
+}

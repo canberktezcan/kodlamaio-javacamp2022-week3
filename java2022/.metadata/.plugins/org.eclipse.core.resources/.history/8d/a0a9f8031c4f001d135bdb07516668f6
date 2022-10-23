@@ -1,0 +1,20 @@
+package oopWithNLayeredApp.business;
+
+import oopWithNLayeredApp.dataAccess.InstructorDao;
+import oopWithNLayeredApp.entities.Instructor;
+
+
+public class InstructorManager {
+
+	private InstructorDao instructorDao;
+
+	public InstructorManager(InstructorDao instructorDao) {
+		this.instructorDao = instructorDao;
+	}
+	
+	public void add(Instructor instructor) {
+		
+		instructorDao.add(instructor);
+	}
+	
+}

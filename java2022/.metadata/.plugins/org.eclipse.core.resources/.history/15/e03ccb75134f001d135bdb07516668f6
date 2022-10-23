@@ -1,0 +1,13 @@
+package oopWithNLayeredApp.dataAccess.JdbcDao;
+
+import oopWithNLayeredApp.dataAccess.InstructorDao;
+
+public class InstructorJdbcDao implements InstructorDao {
+
+	@Override
+	public void add() {
+		
+		System.out.println("Instructor added by Hibernate");
+		
+	}
+}

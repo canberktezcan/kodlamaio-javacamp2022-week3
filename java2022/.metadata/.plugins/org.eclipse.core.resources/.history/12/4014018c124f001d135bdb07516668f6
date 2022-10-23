@@ -1,0 +1,5 @@
+package oopWithNLayeredApp.dataAccess.HibernateDao;
+
+public class CategoryHibernateDao {
+
+}

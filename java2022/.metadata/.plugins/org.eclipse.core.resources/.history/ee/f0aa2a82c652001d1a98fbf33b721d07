@@ -1,0 +1,49 @@
+package oopWithNLayeredApp;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import oopWithNLayeredApp.business.CategoryManager;
+import oopWithNLayeredApp.business.CourseManager;
+import oopWithNLayeredApp.business.InstructorManager;
+import oopWithNLayeredApp.core.logging.DatabaseLogger;
+import oopWithNLayeredApp.core.logging.FileLogger;
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.core.logging.MailLogger;
+import oopWithNLayeredApp.dataAccess.HibernateDao.CategoryHibernateDao;
+import oopWithNLayeredApp.dataAccess.HibernateDao.CourseHibernateDao;
+import oopWithNLayeredApp.dataAccess.HibernateDao.InstructorHibernateDao;
+import oopWithNLayeredApp.dataAccess.JdbcDao.CourseJdbcDao;
+import oopWithNLayeredApp.dataAccess.JdbcDao.InstructorJdbcDao;
+import oopWithNLayeredApp.entities.Category;
+import oopWithNLayeredApp.entities.Course;
+import oopWithNLayeredApp.entities.Instructor;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+	
+		Course course = new Course(1,"Mobil", 100); 
+		List<Course> courses=new ArrayList<Course>();
+		CourseManager courseManager = new CourseManager(new CourseHibernateDao(),courses);
+		courseManager.add(course);
+		
+		
+		Instructor instructor = new Instructor(1,"Engin","Demiroğ");
+		InstructorManager instructorManager = new InstructorManager(new InstructorJdbcDao());
+		instructorManager.add(instructor);
+		
+		
+		Category category = new Category(1,"Programlama"); 
+		List<Category> categories=new ArrayList<Category>();
+		List <Logger> loggers = new ArrayList<Logger>();
+		loggers.add(new FileLogger());
+		loggers.add(new DatabaseLogger());
+		loggers.add(new MailLogger());
+		CategoryManager categoryManager = new CategoryManager(new CategoryHibernateDao(),categories,loggers);
+		categoryManager.add(category);
+		
+
+	}
+
+}

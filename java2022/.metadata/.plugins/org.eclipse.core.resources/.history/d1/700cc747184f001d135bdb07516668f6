@@ -1,0 +1,19 @@
+package oopWithNLayeredApp.business;
+
+import oopWithNLayeredApp.dataAccess.JdbcDao.CourseJdbcDao;
+import oopWithNLayeredApp.entities.Course;
+
+public class CourseManager {
+
+	CourseJdbcDao courseJdbcDao = new CourseJdbcDao();
+
+	public void add(Course course) throws Exception {
+
+		if (course.getPrice() < 0) {
+			throw new Exception("Kurs fiyatı 0 tl'den daha kucuk olamaz !");
+		} else {
+			courseJdbcDao.add(course);
+		}
+
+	}
+}

@@ -1,0 +1,24 @@
+package oopWithNLayeredApp;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import oopWithNLayeredApp.business.CourseManager;
+import oopWithNLayeredApp.dataAccess.HibernateDao.CourseHibernateDao;
+import oopWithNLayeredApp.dataAccess.JdbcDao.CourseJdbcDao;
+import oopWithNLayeredApp.entities.Course;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+	
+		Course course = new Course(1,"Mobil", -1); 
+		List<Course> courses=new ArrayList<Course>();
+		
+		CourseManager courseManager = new CourseManager(new CourseHibernateDao(),courses);
+		courseManager.add(course);
+		
+
+	}
+
+}

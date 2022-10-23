@@ -1,0 +1,26 @@
+package oopWithNLayeredApp;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import oopWithNLayeredApp.business.CourseManager;
+import oopWithNLayeredApp.dataAccess.JdbcDao.CourseJdbcDao;
+import oopWithNLayeredApp.entities.Course;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+	
+		Course course = new Course(1,"Mobil", 10); 
+		Course course2 = new Course(1,"x", 10); 
+		List<Course> courses=new ArrayList<Course>();
+		
+		CourseJdbcDao courseJdbcDao = new CourseJdbcDao();
+		CourseManager courseManager = new CourseManager(courseJdbcDao,courses);
+		courseManager.add(course);
+		courseManager.add(course2);
+		
+
+	}
+
+}

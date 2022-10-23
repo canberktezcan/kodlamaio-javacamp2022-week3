@@ -1,0 +1,14 @@
+package oopWithNLayeredApp.dataAccess.HibernateDao;
+
+import oopWithNLayeredApp.dataAccess.CourseDao;
+
+public class CourseHibernateDao implements CourseDao{
+
+	@Override
+	public void add() {
+		
+		System.out.println("Course added by Hibernate");
+		
+	}
+
+}
